@@ -1,0 +1,58 @@
+.experience{
+&__subtitle{
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: rgb(105, 142, 129);
+}  
+&__list{
+    counter-reset: myCounter;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+@include tablet{
+    grid-template-columns: repeat(2, 1fr);
+} 
+@include small-tablet{
+    grid-template-columns: 1fr;
+}   
+}  
+&__item{
+    display: flex;
+    flex-direction: column;
+}
+&__text{
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+&__headline{
+    margin: 0;
+    min-height: 66px;
+    font-family: var(--font-family);
+    font-size: 32px;
+    line-height: 33px;
+    color: var(--light-color);
+    text-transform: uppercase;
+}
+&__descr{
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: var(--second-family);
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--light-color);
+}
+
+.item-experience::before{
+    content: "0" counter(myCounter);
+    counter-increment: myCounter;
+    display: inline-block;
+    font-size: 117px;
+    padding: 50px 0;
+}
+}

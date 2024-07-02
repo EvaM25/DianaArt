@@ -1,0 +1,18 @@
+:root{
+    //base
+    --font-family: "NeutralFace", sans-serif;
+    --second-family: "Roboto", sans-serif;
+    --content-width: 1380px;
+    --container-offset: 40px;
+    --container-width: calc(var(--content-width) + (var(--container-offset)  * 2));
+    --offset: 30px;
+    //colors
+    --light-color: #fff;
+    --main-color: #0b3825;
+    --dark-color: rgb(4, 37, 26);
+    --form-color: #faf1d9;
+    --hover-color: #eed494;
+    --active-color: #cbad62;
+    --focus-color: #eed494;
+    --accent-color: #dec37d;
+}

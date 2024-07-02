@@ -1,0 +1,42 @@
+.about{
+    color: var(--light-color);
+    &__container{
+        max-width: 1440px;
+        // height: 617px;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    @include small-tablet{
+        grid-template-columns: 1fr;
+    }    
+    }
+    &__text{
+        padding: 120px 70px;
+        align-self: center;
+    @include big-desktop{
+        padding: 80px 40px;
+    }  
+    @include small-tablet{
+        padding: 0 20px 40px;
+    }  
+    }
+    &__title{
+        margin-bottom: 25px;
+    }
+    &__descr{
+        margin: 0;
+        margin-bottom: 15px;
+        font-family: var(--second-family);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 120%;
+      
+    }
+
+    &__img{
+        display: block;
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+    }
+}

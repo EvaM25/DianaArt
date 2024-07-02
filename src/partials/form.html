@@ -1,0 +1,58 @@
+<section class="section application" id="contacts">
+ <div class="application__container">
+  <div class="application__text">
+    <h2 class=" title application__title">
+      Let's get started
+    </h2>
+    <p class="application__descr">
+      Now that you know a lot about me, let me know if you are interested in working with me.
+    </p>
+  </div>
+  <form id="form" class="application__form" method="post" enctype="multipart/form-data" autocomplete="off">
+   <div class="application__wrapper">
+     <div class="application__inputs">
+     <div class="application__box">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" required aria-labelledby="name" autocomplete="off" >
+     </div>
+     <div class="application__box">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" required aria-labelledby="email" autocomplete="off" >
+     </div>
+     <div class="application__box">
+      <label for="phone">Phone number</label>
+      <input id="phone" type="phone" name="phone" required aria-labelledby="phone" autocomplete="off"> 
+     </div>
+     <div class="application__box">
+      <label for="message">Message</label>
+       <textarea name="text" id="message" type="message" required aria-labelledby="email" autocomplete="off" ></textarea> 
+     </div>
+    </div>
+    <div class=" application__wrap">
+     <button id="application__btn" class="application__btn btn-reset" type="submit" aria-label="Let's get started">
+        Let's get started
+     </button>
+     <label class="application__checkbox" for="checkbox">
+      <input  type="checkbox" id="checkbox" required aria-label="checkbox">
+      <span>
+        I agree to the processing of personal data
+      </span>
+      </label>
+      <div class="modal application__modal" id="modal">
+        <div class="modal__box">
+          <button class="modal__close btn-reset" id="close-modal" aria-label="Закрыть">
+            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><path d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"/></svg>
+          </button>
+          <h2 class="modal__header">
+            Thanks!
+          </h2>
+          <p class="modal__descr">
+            I will get in touch with you soon!
+          </p>
+        </div>
+       </div>
+    </div>
+   </div>
+  </form>
+ </div> 
+</section>

@@ -1,0 +1,60 @@
+.portfolio{
+    color: var(--light-color);
+
+&__subtitle{
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: rgb(105, 142, 129);
+}
+&__image {
+    position: relative;
+    height: 950px;
+    width: 1220px;
+}  
+&__img{
+    height: 550px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+}
+.swiper{
+
+    width: 100%;
+}
+.swiper-navBtn{
+    color: var(--light-color);
+    transition: color 0.3s ease-in-out;
+
+@include small-tablet{
+    display: none;
+}
+}
+.swiper-navBtn:hover{
+    color: var(--dark-color);
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+    font-size: 30px; 
+}
+.swiper-button-prev{
+    left: 0;
+}
+.swiper-button-next{
+    right: 0;
+}
+.swiper-pagination-bullet{
+    height: 12px;
+    width: 12px;
+    background-color: var(--light-color);
+    opacity: 1;
+}
+.swiper-pagination-bullet-active{
+    background-color: var(--light-color);
+}
+
+

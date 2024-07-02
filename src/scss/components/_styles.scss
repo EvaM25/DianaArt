@@ -1,0 +1,67 @@
+.styles{
+    color: var(--light-color);
+&__container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+    column-gap: 30px;
+@include big-desktop{
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+}
+}  
+&__text{
+    grid-column: 1/2;
+}    
+&__title{
+    margin-bottom: 24px;
+}
+&__descr{
+    margin: 0;
+    font-family: var(--second-family);
+    font-size: 16px;
+}  
+&__items{
+    grid-column: 2/5;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+@include big-desktop{
+    grid-column: 1/2;
+}
+}
+&__img{
+    margin-bottom: 30px;
+    width: 100%;
+    height: 387px;
+    object-fit: cover;
+}
+&__btn{
+   margin-bottom: 15px;
+   font-family: var(--font-family);
+   font-size: 22px;
+   line-height: 25px;
+   font-weight: 700;
+   background: linear-gradient(to right, #dec37d, #b48811);
+   background-clip: text;
+   color: transparent;
+   animation: 5s linear infinite gradientAnimation;
+   transition: transform 0.3s ease-in-out;
+}
+
+&__btn:hover{
+    transform: scale(0.9);
+}
+
+@keyframes gradientAnimation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.hero{
+    position: relative;
+    padding-bottom: 80px;
+@include big-desktop{
+    padding-top: 100px;
+}    
+@include tablet{
+    padding-top: 100px;
+    padding-bottom: 40px;
+}    
+@include small-tablet{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+&__container{
+    @include small-tablet{
+        padding: 0;
+    }    
+}
+&__wrap{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+
+@include small-tablet{
+    flex-direction: column;
+    gap: 30px;
+}    
+}  
+&__img{
+    position: relative;
+    object-fit: cover;
+    z-index: 2;
+    flex: 0 1 750px;
+    transform: translateX(40px);
+@include big-desktop{
+    flex: 0 1 620px;
+    transform: translateX(0);
+}
+@include small-tablet{
+    display: flex;
+    flex: 0 1 auto;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+ img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    flex: 1;
+}
+}
+&__text{
+    position: relative;
+    flex: 0 1 738px;
+    transform: translateX(-40px);
+    z-index: 3;
+    color: var(--light-color);
+@include big-desktop{
+    flex: 0 1 638px;
+    transform: translateX(-66px) translateY(40px);
+} 
+@include small-tablet{
+    flex: 0 1 auto;
+    transform: translateX(0) translateY(0);
+    padding: 0 20px;
+}   
+}
+&__title{
+    margin-bottom: 32px;
+    font-size: 64px;
+    line-height: 66px;
+    font-weight: 700;
+@include big-desktop{
+    font-size: 52px;
+    line-height: 60px;
+}
+@include tablet{
+    font-size: 44px;
+    line-height: 52px;
+    margin-bottom: 10px;
+}
+}
+&__descr{
+    margin: 0;
+    font-family: var(--second-family);
+    font-size: 32px;
+    line-height: normal;
+    font-weight: 400;
+ span{
+    color: var(--accent-color);
+} 
+@include big-desktop{
+    font-size: 24px;
+    line-height: 32px;
+} 
+@include tablet{
+    font-size: 18px;
+    line-height: 24px;
+}  
+}
+}
+.hero::after{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -90px;
+    bottom: 0;
+    left: 30%;
+    right: 0;
+    background-color: var(--dark-color);
+@include big-desktop{
+    display: none;
+}
+}
+

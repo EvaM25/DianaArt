@@ -1,0 +1,39 @@
+.illustrations{
+    color: var(--light-color);
+    position: relative;
+&__descr{
+    margin-bottom: 10px;
+    font-family: var(--second-family);
+    font-size: 18px;
+
+} 
+&__btn{
+    margin-bottom: 64px;
+
+@include big-desktop{
+    position: absolute;
+    right: 230px;
+    bottom: 250px;
+    margin-bottom: 0;
+}   
+@include tablet{
+    position: relative;
+    left:0;
+    top:0;
+    margin-bottom: 30px;
+} 
+} 
+&__images{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+@include small-tablet{
+    grid-template-columns: 1fr;
+}   
+} 
+&__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+}
