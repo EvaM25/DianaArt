@@ -33,8 +33,9 @@
     "vinyl-ftp": "^0.6.1"
   },
   "dependencies": {
-    "gulp": "^4.0.2",
+    "gulp": "^4.0.0",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-webp": "^4.0.1",
     "imask": "^7.6.1",
     "just-validate": "^4.3.0",
     "magnific-popup": "^1.2.0",

@@ -12,6 +12,7 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify-es').default;
 const image = require('gulp-image');
 const htmlMin = require('gulp-htmlmin');
+const webp = require('gulp-webp');
 const gutil = require('gulp-util');
 const ftp = require('vinyl-ftp');
 const typograf = require('gulp-typograf');
@@ -72,7 +73,7 @@ const htmlInclude = () => {
 }
  
 const imgToApp = () => {
-	return src (['./src/img/**.jpg', './src/img/**.png', './src/img/**.jpeg' ])
+	return src (['./src/img/**.{jpg, png, jpeg}'])
 	    .pipe(dest('./app/img'))
 }
 
@@ -89,6 +90,13 @@ const imgMin = () => {
 	]))
 	.pipe(dest('./app/img'));
 }
+
+const webpImages = () => {
+	return src('./src/img/*.{jpg,png,jpeg}',  { encoding: false })
+	.pipe(webp())
+	.pipe(dest('app/img'));
+}
+
 const resources = () => {
 	return src('./src/resources/**')
 		.pipe(dest('./app'))
@@ -126,7 +134,8 @@ const watchFiles = () => {
 	watch('./src/img/**.jpg', imgToApp);
 	watch('./src/img/**.png', imgToApp);
 	watch('./src/img/**.jpeg', imgToApp);
-	watch('./src/img/**', imgMin), 
+	watch('./src/img/**', imgMin),
+	watch('./src/img/**', webpImages),  
 	watch('./src/resources/**', resources);
 	watch('./src/js/*.js', scripts);
 }
@@ -136,7 +145,7 @@ exports.styles = styles;
 exports.watchFiles = watchFiles;
 exports.fileInclude = htmlInclude;
 
-exports.default = series(clean, parallel(htmlInclude, scripts, resources, imgToApp, imgMin),styles, watchFiles);
+exports.default = series(clean, parallel(htmlInclude, scripts, resources, imgToApp, imgMin, webpImages),styles, watchFiles);
 
 const htmlMinify = () => {
     return src('src/**/*.html')
@@ -148,9 +157,7 @@ const htmlMinify = () => {
 
 const images = () => {
 	return src([
-	 'src/img/**/*.jpg',
-	 'src/img/**/*.png',
-	 'src/img/**/*.jpeg',
+	 'src/img/**/*.{jpg,png,jpeg}'
 	])
 	.pipe(image())
 	.pipe(dest('./app/img'))
@@ -184,7 +191,7 @@ const scriptsBuild = () => {
 		.pipe(dest('./app/js'))
 }
 
-exports.build = series(clean, parallel(htmlInclude, scriptsBuild, resources, imgToApp, imgMin, htmlMinify),stylesBuild, images);
+exports.build = series(clean, htmlInclude, scriptsBuild, stylesBuild, resources, images, imgToApp, imgMin,webpImages, htmlMinify);
 
 const deploy = () => {
 	let conn = ftp.create({
