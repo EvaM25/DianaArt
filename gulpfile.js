@@ -71,6 +71,23 @@ const htmlInclude = () => {
 		.pipe(dest('./app'))
 		.pipe(browserSync.stream());
 }
+
+const htmlIncludeMinify = () => {
+	return src(['./src/index.html'])
+	    .pipe(fileInclude({
+			prefix: '@', 
+            basepath: '@file'
+		}))
+		.pipe(typograf({
+			locale: ['ru', 'en-US']
+		}))
+		.pipe(htmlMin({
+			collapseWhitespace: true,
+		}))
+		.pipe(dest('./app'))
+		.pipe(browserSync.stream());
+}
+ 
  
 const imgToApp = () => {
 	return src (['./src/img/**.{jpg, png, jpeg}'])
@@ -147,17 +164,17 @@ exports.fileInclude = htmlInclude;
 
 exports.default = series(clean, parallel(htmlInclude, scripts, resources, imgToApp, imgMin, webpImages),styles, watchFiles);
 
-const htmlMinify = () => {
-    return src('src/**/*.html')
-    .pipe(htmlMin({
-        collapseWhitespace: true,
-    }))
-    .pipe(dest('./app'))
-}
+// const htmlMinify = () => {
+//     return src('./src/**/*.html')
+//     .pipe(htmlMin({
+//         collapseWhitespace: true,
+//     }))
+//     .pipe(dest('./app'))
+// }
 
 const images = () => {
 	return src([
-	 'src/img/**/*.{jpg,png,jpeg}'
+	 './src/img/**/*.{jpg,png,jpeg}'
 	])
 	.pipe(image())
 	.pipe(dest('./app/img'))
@@ -191,7 +208,8 @@ const scriptsBuild = () => {
 		.pipe(dest('./app/js'))
 }
 
-exports.build = series(clean, htmlInclude, scriptsBuild, stylesBuild, resources, images, imgToApp, imgMin,webpImages, htmlMinify);
+// exports.build = series(clean, htmlInclude, scriptsBuild, stylesBuild, resources, images, imgToApp, imgMin,webpImages, htmlMinify);
+exports.build = series(clean, htmlIncludeMinify, scriptsBuild, stylesBuild, resources, imgMin, webpImages);
 
 const deploy = () => {
 	let conn = ftp.create({
