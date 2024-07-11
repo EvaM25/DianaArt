@@ -1,4 +1,4 @@
-Сайт https://dianaartworld.com/
+https://dianaartworld.com/
 
 DianaArt Project: A Web Platform for event-Illustrator Diana Mikhaleva. 👩‍🎨
 
@@ -22,7 +22,7 @@ Personal Contribution:
 
 
 
-
+🌍🌍🌍
 
 
 Проект DianaArt: Веб-платформа для иллюстратора Дианы Михалевой.👩‍🎨
