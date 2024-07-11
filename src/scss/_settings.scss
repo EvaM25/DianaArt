@@ -157,6 +157,13 @@ a{
     }
 }
 
+@media (hover: none) and (pointer: coarse) {
+    .styles__img:hover {
+      transform: none;
+      color: inherit; 
+    }
+  }
+
 @media(any-hover) {
     .btn:hover::before {
       transform: scaleX(0.9) scaleY(2)

@@ -11,9 +11,10 @@
 &__image {
     position: relative;
     width: 1220px;
+    height: 550px;
 }  
 &__img{
-    height: 550px;
+    height: 100%;
     width: 100%;
     object-fit: cover;
     display: block;
@@ -22,7 +23,6 @@
 
 }
 .swiper{
-
     width: 100%;
 }
 .swiper-navBtn{
