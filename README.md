@@ -16,7 +16,7 @@ Key Achievements:
 
 Personal Contribution:
 
-✨Multilingual Content: Translated textual content into English, maintaining accuracy and cultural relevance.
+✨Multilingual Content: Translated text content into English, maintaining accuracy and cultural relevance.
 
 ✨Design: Co-authored the design, including the selection of color palette, typography, and layout that aligns with Diana Mikhaleva's brand.
 
