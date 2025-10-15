@@ -45,5 +45,12 @@ Personal Contribution:
 
 ✨Дизайн: Со-авторство дизайна, включая выбор цветовой палитры, типографики и макета, соответствующего бренду Дианы Михалевой.
 
+# Getting Started
 
+First, run the development server(or build task):
+
+```bash
+gulp
+```
+Open http://localhost:3000 with your browser to see the result.
 
